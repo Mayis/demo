@@ -34,7 +34,7 @@
         "enable_cors": false,
         "GET": {
           "authorization_type": "NONE",
-          "integration_type": "mock",
+          "integration_type": "AWS",
           "api_key_required": false,
           "method_request_parameters": {},
           "integration_request_body_template": {},
