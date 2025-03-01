@@ -31,16 +31,28 @@
     "dependencies": [],
     "resources": {
       "/hello": {
+        "enable_cors": false,
         "GET": {
-          "integration_type": "LAMBDA",
-          "lambda_name": "hello_world",
-          "response": {
-            "statusCode": 200,
-            "body": "{\"message\": \"Hello from Lambda\"}"
-          }
+          "authorization_type": "NONE",
+          "integration_type": "mock",
+          "api_key_required": false,
+          "method_request_parameters": {},
+          "integration_request_body_template": {},
+          "responses": [],
+          "integration_responses": [],
+          "default_error_pattern": true
         }
       }
     },
-    "tags": {}
+    "tags": {},
+    "authorizers": {
+      "cmtr_syndicate_student/3e6647f0": {
+        "type": "TOKEN",
+        "identity_source": "method.request.header.Authorization",
+        "ttl": 300,
+        "lambda_alias": "${lambdas_alias_name}",
+        "lambda_name": "hello_world"
+      }
+    }
   }
 }
