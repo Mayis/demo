@@ -29,35 +29,24 @@
     "resource_type": "api_gateway",
     "deploy_stage": "api",
     "dependencies": [],
-    "GET": {
-      "authorization_type": "NONE",
-      "integration_type": "mock",
-      "api_key_required": false,
-      "method_request_parameters": {},
-      "integration_request_body_template": {},
-      "responses": [
-        {
-          "status_code": "200",
-          "response_models": {
-            "application/json": "Empty"
-          },
-          "response_parameters": {}
+    "resources": {
+      "/hello": {
+        "enable_cors": false,
+        "GET": {
+          "authorization_type": "NONE",
+          "integration_type": "mock",
+          "api_key_required": false,
+          "method_request_parameters": {},
+          "integration_request_body_template": {},
+          "responses": [],
+          "integration_responses": [],
+          "default_error_pattern": true
         }
-      ],
-      "integration_responses": [
-        {
-          "status_code": "200",
-          "response_templates": {
-            "application/json": "{\"statusCode\": 200, \"message\": \"Hello from Lambda\"}"
-          },
-          "response_parameters": {}
-        }
-      ],
-      "default_error_pattern": true
+      }
     },
     "tags": {},
     "authorizers": {
-      "mayis": {
+      "authorizer": {
         "type": "TOKEN",
         "identity_source": "method.request.header.Authorization",
         "ttl": 300,

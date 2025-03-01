@@ -8,6 +8,7 @@
   "memory": 128,
   "timeout": 100,
   "lambda_path": "lambdas/hello_world",
+  " lambdas_alias_name": "learn",
   "dependencies": [],
   "event_sources": [],
   "env_variables": {},
