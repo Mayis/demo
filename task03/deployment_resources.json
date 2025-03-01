@@ -38,14 +38,7 @@
           "api_key_required": false,
           "method_request_parameters": {},
           "integration_request_body_template": {},
-          "responses": [
-            {
-              "status_code": 200,
-              "response_body": "Hello from Lambda",
-              "response_models": {},
-              "response_parameters": {}
-            }
-          ],
+          "responses": [],
           "integration_responses": [],
           "default_error_pattern": true
         }
@@ -54,8 +47,8 @@
     "tags": {},
     "authorizers": {
       "authorizer": {
-        "type": "TOKEN",
-        "identity_source": "method.request.header.Authorization",
+        "type": "REQUEST",
+        "identity_source": "method.request.querystring.principal_id, method.request.querystring.authorization_token, context.httpMethod, context.resourcePath",
         "ttl": 300,
         "lambda_alias": "${lambdas_alias_name}",
         "lambda_name": "hello_world"
