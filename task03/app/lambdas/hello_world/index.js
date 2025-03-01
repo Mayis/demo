@@ -1,5 +1,4 @@
 exports.handler = async (event) => {
-  // Extract the HTTP method and path from the event object
   const httpMethod = event.requestContext.http.method;
   const path = event.requestContext.http.path;
 
