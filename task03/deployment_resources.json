@@ -46,7 +46,7 @@
     },
     "tags": {},
     "authorizers": {
-      "cmtr_syndicate_student/3e6647f0": {
+      "mayis": {
         "type": "TOKEN",
         "identity_source": "method.request.header.Authorization",
         "ttl": 300,
