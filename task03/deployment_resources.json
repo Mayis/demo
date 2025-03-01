@@ -38,7 +38,14 @@
           "api_key_required": false,
           "method_request_parameters": {},
           "integration_request_body_template": {},
-          "responses": [],
+          "responses": [
+            {
+              "status_code": 200,
+              "response_body": "Hello from Lambda",
+              "response_models": {},
+              "response_parameters": {}
+            }
+          ],
           "integration_responses": [],
           "default_error_pattern": true
         }
