@@ -8,34 +8,35 @@ exports.handler = async (event) => {
     const requestBody = JSON.parse(event.body);
     const { principalId, content } = requestBody;
 
+    // Validate input
+    if (!principalId || !content) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ message: "Missing principalId or content" }),
+      };
+    }
+
+    // Generate event data
     const eventId = uuid.v4();
     const createdAt = new Date().toISOString();
 
-    const params = {
-      TableName: process.env.TARGET_TABLE,
-      Item: {
-        id: eventId,
-        principalId,
-        createdAt,
-        body: content,
-      },
-    };
+    // Save to DynamoDB
+    await dynamoDb
+      .put({
+        TableName: process.env.TARGET_TABLE,
+        Item: { id: eventId, principalId, createdAt, body: content },
+      })
+      .promise();
 
-    await dynamoDb.put(params).promise();
-
-    const response = {
+    // Return response with statusCode in the body
+    return {
       statusCode: 201,
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        event: {
-          id: eventId,
-          principalId,
-          createdAt,
-          body: content,
-        },
+        statusCode: 201, // Include statusCode in the body
+        event: { id: eventId, principalId, createdAt, body: content },
       }),
     };
-
-    return response;
   } catch (error) {
     console.error("Error:", error);
     return {
