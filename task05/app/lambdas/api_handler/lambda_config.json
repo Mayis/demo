@@ -10,11 +10,11 @@
   "lambda_path": "lambdas/api_handler",
   "lambdas_alias_name": "learn",
   "target_table": "Events",
-  "dependencies": [],
-  "event_sources": [],
   "env_variables": {
     "TARGET_TABLE": "${target_table}"
   },
+  "dependencies": [],
+  "event_sources": [],
   "publish_version": true,
   "alias": "${lambdas_alias_name}",
   "url_config": {},

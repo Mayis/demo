@@ -8,7 +8,6 @@ exports.handler = async (event) => {
     const requestBody = JSON.parse(event.body);
     const { principalId, content } = requestBody;
 
-    // Validate input
     if (!principalId || !content) {
       return {
         statusCode: 400,
@@ -20,11 +19,9 @@ exports.handler = async (event) => {
       };
     }
 
-    // Generate event data
     const eventId = uuid.v4();
     const createdAt = new Date().toISOString();
 
-    // Save to DynamoDB
     const params = {
       TableName: process.env.TARGET_TABLE,
       Item: {
@@ -37,11 +34,10 @@ exports.handler = async (event) => {
 
     await dynamoDb.put(params).promise();
 
-    // Prepare the response
     const response = {
       statusCode: 201,
       body: JSON.stringify({
-        statusCode: 201, // Include statusCode in the body
+        statusCode: 201,
         event: {
           id: eventId,
           principalId,
