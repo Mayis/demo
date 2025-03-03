@@ -1,63 +1,33 @@
 const AWS = require("aws-sdk");
-const uuid = require("uuid");
+const { v4: uuidv4 } = require("uuid");
 
-const dynamoDb = new AWS.DynamoDB.DocumentClient();
+const dynamoDB = new AWS.DynamoDB.DocumentClient();
 
 exports.handler = async (event) => {
+  console.log("Received event:", JSON.stringify(event));
+
+  const item = {
+    id: uuidv4(),
+    principalId: event.principalId,
+    createdAt: new Date().toISOString(),
+    body: event.content,
+  };
+
+  const params = {
+    TableName: process.env.TABLE_NAME,
+    Item: item,
+  };
+
   try {
-    const requestBody = JSON.parse(event.body);
-    const { principalId, content } = requestBody;
-
-    if (!principalId || !content) {
-      return {
-        statusCode: 400,
-        body: JSON.stringify({
-          statusCode: 400,
-          error: "Missing principalId or content",
-        }),
-        headers: { "Content-Type": "application/json" },
-      };
-    }
-
-    const eventId = uuid.v4();
-    const createdAt = new Date().toISOString();
-
-    const params = {
-      TableName: process.env.TARGET_TABLE,
-      Item: {
-        id: eventId,
-        principalId,
-        createdAt,
-        body: content,
-      },
-    };
-
-    await dynamoDb.put(params).promise();
-
-    const response = {
+    const data = await dynamoDB.put(params).promise();
+    console.log("PutItem succeeded:", data);
+    const returnObj = {
       statusCode: 201,
-      body: JSON.stringify({
-        statusCode: 201,
-        event: {
-          id: eventId,
-          principalId,
-          createdAt,
-          body: content,
-        },
-      }),
-      headers: { "Content-Type": "application/json" },
+      event: item,
     };
 
-    return response;
-  } catch (error) {
-    console.error("Error:", error);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        statusCode: 500,
-        error: "Internal Server Error",
-      }),
-      headers: { "Content-Type": "application/json" },
-    };
+    return returnObj;
+  } catch (e) {
+    return JSON.stringify(e, null, 2);
   }
 };
