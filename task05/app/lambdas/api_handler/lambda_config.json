@@ -8,9 +8,13 @@
   "memory": 128,
   "timeout": 100,
   "lambda_path": "lambdas/api_handler",
+  "lambdas_alias_name": "learn",
+  "target_table": "Events",
+  "env_variables": {
+    "TARGET_TABLE": "${target_table}"
+  },
   "dependencies": [],
   "event_sources": [],
-  "env_variables": {},
   "publish_version": true,
   "alias": "${lambdas_alias_name}",
   "url_config": {},
