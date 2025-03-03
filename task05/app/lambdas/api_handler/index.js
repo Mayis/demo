@@ -33,7 +33,7 @@ exports.handler = async (event) => {
     };
 
     const params = {
-      TableName: process.env.TABLE_NAME,
+      TableName: process.env.TARGET_TABLE,
       Item: item,
     };
 
