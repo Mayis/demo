@@ -14,8 +14,7 @@
             "dynamodb:DeleteItem",
             "ssm:PutParameter",
             "ssm:GetParameter",
-            "kms:Decrypt",
-            "lambda:InvokeFunction"
+            "kms:Decrypt"
           ],
           "Effect": "Allow",
           "Resource": "*"
@@ -26,6 +25,13 @@
     "resource_type": "iam_policy",
     "tags": {}
   },
+  "api_handler-role": {
+    "predefined_policies": [],
+    "principal_service": "lambda",
+    "custom_policies": ["lambda-basic-execution"],
+    "resource_type": "iam_role",
+    "tags": {}
+  },
   "task5_api": {
     "resource_type": "api_gateway",
     "deploy_stage": "api",
@@ -34,6 +40,8 @@
       "/events": {
         "enable_cors": false,
         "POST": {
+          "#_COMMENT": "the 'enable_proxy' option for api method is supported by Syndicate, but not documented anywhere. This option simplifies request parameters transfer to lambda",
+          "enable_proxy": true,
           "authorization_type": "NONE",
           "integration_type": "lambda",
           "lambda_name": "api_handler",
@@ -45,21 +53,11 @@
           "default_error_pattern": true
         }
       }
-    },
-    "tags": {},
-    "authorizers": {
-      "authorizer": {
-        "type": "REQUEST",
-        "identity_source": "method.request.querystring.principal_id, method.request.querystring.authorization_token, context.httpMethod, context.resourcePath",
-        "ttl": 300,
-        "lambda_alias": "${lambdas_alias_name}",
-        "lambda_name": "api_handler"
-      }
     }
   },
-  "Events": {
+  "${target_table}": {
     "resource_type": "dynamodb_table",
-    "hash_key_name": "id",
+    "hash_key_name": "event_id",
     "hash_key_type": "S",
     "read_capacity": 1,
     "write_capacity": 1,
