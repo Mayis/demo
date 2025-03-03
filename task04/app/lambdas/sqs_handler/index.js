@@ -1,6 +1,4 @@
 exports.handler = async (event) => {
-  event.Records.forEach((record) => {
-    const messageBody = record.body;
-    console.log("Received SQS message:", messageBody);
-  });
+  console.log("Received SQS event:", JSON.stringify(event, null, 2));
+  return "Processed successfully";
 };
