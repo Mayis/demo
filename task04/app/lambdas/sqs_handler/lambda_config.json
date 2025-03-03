@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "name": "sqs_handler",
+  "func_name": "lambdas/sqs_handler/index.handler",
+  "resource_type": "lambda",
+  "iam_role_name": "sqs_handler-role",
+  "runtime": "nodejs20.x",
+  "memory": 128,
+  "timeout": 100,
+  "lambda_path": "lambdas/sqs_handler",
+  "lambdas_alias_name": "learn",
+  "dependencies": [],
+  "event_sources": [
+    {
+      "resource_type": "sqs_trigger",
+      "target_queue": "sqs_handler1",
+      "batch_size": 10
+    },
+    {
+      "resource_type": "sns_topic_trigger",
+      "target_topic": "sns_handler1",
+      "region": "eu-central-1"
+    }
+  ],
+  "env_variables": {},
+  "publish_version": true,
+  "alias": "${lambdas_alias_name}",
+  "url_config": {},
+  "ephemeral_storage": 512,
+  "tags": {}
+}
