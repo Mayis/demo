@@ -38,22 +38,8 @@
           "api_key_required": false,
           "method_request_parameters": {},
           "integration_request_body_template": {},
-          "responses": [
-            {
-              "statusCode": 200,
-              "responseTemplates": {
-                "application/json": "{ \"statusCode\": 200, \"message\": \"Hello from Lambda\" }"
-              }
-            }
-          ],
-          "integration_responses": [
-            {
-              "statusCode": 200,
-              "responseTemplates": {
-                "application/json": "{ \"statusCode\": 200, \"message\": \"Hello from Lambda\" }"
-              }
-            }
-          ],
+          "responses": [],
+          "integration_responses": [],
           "default_error_pattern": true
         }
       }
