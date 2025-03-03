@@ -15,7 +15,8 @@
             "ssm:PutParameter",
             "ssm:GetParameter",
             "kms:Decrypt",
-            "sqs:ReceiveMessage"
+            "sqs:*",
+            "sns:*"
           ],
           "Effect": "Allow",
           "Resource": "*"
