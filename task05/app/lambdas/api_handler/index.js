@@ -40,10 +40,10 @@ exports.handler = async (event) => {
     await dynamoDB.put(params).promise();
     console.log("Successfully saved event to DynamoDB:", item);
 
-    return {
+    return formatResponse(201, {
       statusCode: 201,
       event: item,
-    };
+    });
   } catch (error) {
     console.error("Error processing request:", error);
     return formatResponse(500, { error: "Internal server error" });
