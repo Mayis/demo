@@ -14,8 +14,7 @@
             "dynamodb:DeleteItem",
             "ssm:PutParameter",
             "ssm:GetParameter",
-            "kms:Decrypt",
-            "lambda:InvokeFunction"
+            "kms:Decrypt"
           ],
           "Effect": "Allow",
           "Resource": "*"
@@ -56,15 +55,5 @@
         "lambda_name": "api_handler"
       }
     }
-  },
-  "Events": {
-    "resource_type": "dynamodb_table",
-    "hash_key_name": "id",
-    "hash_key_type": "S",
-    "read_capacity": 1,
-    "write_capacity": 1,
-    "global_indexes": [],
-    "autoscaling": [],
-    "tags": {}
   }
 }
