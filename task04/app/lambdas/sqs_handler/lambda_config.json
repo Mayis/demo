@@ -13,13 +13,8 @@
   "event_sources": [
     {
       "resource_type": "sqs_trigger",
-      "target_queue": "sqs_handler1",
+      "target_queue": "async_handler",
       "batch_size": 10
-    },
-    {
-      "resource_type": "sns_topic_trigger",
-      "target_topic": "sns_handler1",
-      "region": "eu-central-1"
     }
   ],
   "env_variables": {},

@@ -25,7 +25,7 @@
     "resource_type": "iam_policy",
     "tags": {}
   },
-  "sqs_queue1": {
+  "async_handler": {
     "resource_type": "sqs_queue",
     "fifo_queue": false,
     "visibility_timeout": 30,
@@ -38,7 +38,7 @@
     "content_based_deduplication": false,
     "tags": {}
   },
-  "sns_handler1": {
+  "async_handler1": {
     "resource_type": "sns_topic",
     "region": "eu-central-1",
     "event_sources": [],

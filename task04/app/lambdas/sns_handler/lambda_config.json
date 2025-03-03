@@ -8,8 +8,15 @@
   "memory": 128,
   "timeout": 100,
   "lambda_path": "lambdas/sns_handler",
+  "lambdas_alias_name": "learn",
   "dependencies": [],
-  "event_sources": [],
+  "event_sources": [
+    {
+      "resource_type": "sns_topic_trigger",
+      "target_topic": "async_handler1",
+      "region": "eu-central-1"
+    }
+  ],
   "env_variables": {},
   "publish_version": true,
   "alias": "${lambdas_alias_name}",
