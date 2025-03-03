@@ -37,11 +37,5 @@
     "redrive_policy": {},
     "content_based_deduplication": false,
     "tags": {}
-  },
-  "async_queue1": {
-    "resource_type": "sns_topic",
-    "region": "eu-central-1",
-    "event_sources": [],
-    "tags": {}
   }
 }
