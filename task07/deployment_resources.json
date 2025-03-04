@@ -43,14 +43,14 @@
       {
         "name": "AppSyncDynamoDBAccess",
         "policy_content": {
+          "Version": "2012-10-17",
           "Statement": [
             {
               "Effect": "Allow",
               "Action": ["dynamodb:PutItem", "dynamodb:GetItem"],
               "Resource": "arn:aws:dynamodb:${region}:${account_id}:table/Events"
             }
-          ],
-          "Version": "2012-10-17"
+          ]
         }
       }
     ],
