@@ -29,31 +29,17 @@
     "resource_type": "dynamodb_table",
     "hash_key_name": "id",
     "hash_key_type": "S",
-    "read_capacity": 5,
-    "write_capacity": 5,
+    "read_capacity": 1,
+    "write_capacity": 1,
     "global_indexes": [],
     "autoscaling": [],
     "tags": {}
   },
-  "appsync_api_role": {
+  "appsync_iam": {
     "resource_type": "iam_role",
-    "principal_service": "appsync.amazonaws.com",
-    "predefined_policies": [],
-    "custom_policies": [
-      {
-        "name": "AppSyncDynamoDBAccess",
-        "policy_content": {
-          "Version": "2012-10-17",
-          "Statement": [
-            {
-              "Effect": "Allow",
-              "Action": ["dynamodb:PutItem", "dynamodb:GetItem"],
-              "Resource": "arn:aws:dynamodb:${region}:${account_id}:table/Events"
-            }
-          ]
-        }
-      }
-    ],
+    "principal_service": "appsync",
+    "predefined_policies": ["AWSAppSyncInvokeFullAccess"],
+    "custom_policies": [],
     "allowed_accounts": [],
     "instance_profile": false,
     "permissions_boundary": "",
