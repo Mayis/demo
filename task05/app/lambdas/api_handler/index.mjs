@@ -1,8 +1,9 @@
-const AWS = require("aws-sdk");
-const { v4: uuidv4 } = require("uuid");
+import AWS from "aws-sdk";
+import { v4 as uuidv4 } from "uuid";
+
 const dynamoDB = new AWS.DynamoDB.DocumentClient();
 
-exports.handler = async (event) => {
+export const handler = async (event) => {
   console.log("Received event:", JSON.stringify(event));
 
   try {
