@@ -17,3 +17,12 @@ type Mutation {
 type Query {
   getEvent(id: ID!): Event
 }
+
+input MetaInput {
+  key1: Int
+  key2: String
+}
+
+input PayLoadInput {
+  meta: MetaInput
+}
