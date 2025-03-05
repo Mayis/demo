@@ -1,13 +1,21 @@
+# Define the structure of your API with the GraphQL
+# schema definition language (SDL) here.
+scalar AWSJSON
+
 type Event {
   id: ID!
   userId: Int!
-  createdAt: AWSDateTime!
-  payLoad: AWSJSON!
+  createdAt: String!
+  payLoad: Payload!
 }
 
-input CreateEventInput {
-  userId: Int!
-  payLoad: AWSJSON!
+type Payload {
+  meta: Meta
+}
+
+type Meta {
+  key1: Int
+  key2: String
 }
 
 type Mutation {
@@ -18,11 +26,7 @@ type Query {
   getEvent(id: ID!): Event
 }
 
-input MetaInput {
-  key1: Int
-  key2: String
-}
-
-input PayLoadInput {
-  meta: MetaInput
+schema {
+  query: Query
+  mutation: Mutation
 }
