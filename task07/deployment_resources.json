@@ -35,11 +35,11 @@
     "autoscaling": [],
     "tags": {}
   },
-  "appsync_iam": {
+  "appsync-role": {
     "resource_type": "iam_role",
     "principal_service": "appsync",
-    "predefined_policies": ["AWSAppSyncInvokeFullAccess"],
-    "custom_policies": [],
+    "predefined_policies": [],
+    "custom_policies": ["appsync-basic-execution"],
     "allowed_accounts": [],
     "instance_profile": false,
     "permissions_boundary": "",
