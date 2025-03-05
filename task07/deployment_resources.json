@@ -15,7 +15,9 @@
             "ssm:PutParameter",
             "ssm:GetParameter",
             "kms:Decrypt",
-            "appsync:GraphQL"
+            "appsync:GraphQL",
+            "iam:GetPolicy",
+            "iam:ListPolicies"
           ],
           "Effect": "Allow",
           "Resource": "*"
