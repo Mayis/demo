@@ -18,12 +18,12 @@ type Meta {
   key2: String
 }
 
-type Mutation {
-  createEvent(userId: Int!, payLoad: AWSJSON!): Event
-}
-
 type Query {
   getEvent(id: ID!): Event
+}
+
+type Mutation {
+  createEvent(userId: Int!, payLoad: AWSJSON!): Event
 }
 
 schema {

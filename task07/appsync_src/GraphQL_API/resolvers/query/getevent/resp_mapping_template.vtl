@@ -1,11 +1,7 @@
-## Pass back the result from DynamoDB. **
-             $util.toJson(
+$util.toJson(
 {
     "id": "$ctx.result.id",
     "userId": $ctx.result.userId,
     "createdAt": "$ctx.result.createdAt",
     "payLoad": $ctx.result.payLoad
 })
-
-
-                
