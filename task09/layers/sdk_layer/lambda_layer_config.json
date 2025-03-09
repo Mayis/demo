@@ -1,6 +1,0 @@
-{
-  "name": "sdk_layer",
-  "resource_type": "lambda_layer",
-  "runtimes": ["nodejs20.x"],
-  "deployment_package": "sdk_layer.zip"
-}
