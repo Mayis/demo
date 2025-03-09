@@ -1,0 +1,14 @@
+C:\Users\giorgi\Desktop\Projects\Epam\demo\task09\dnapp\OpenMeteoSDK\bin\Release\net6.0\OpenMeteoSDK.deps.json
+C:\Users\giorgi\Desktop\Projects\Epam\demo\task09\dnapp\OpenMeteoSDK\bin\Release\net6.0\OpenMeteoSDK.runtimeconfig.json
+C:\Users\giorgi\Desktop\Projects\Epam\demo\task09\dnapp\OpenMeteoSDK\bin\Release\net6.0\OpenMeteoSDK.dll
+C:\Users\giorgi\Desktop\Projects\Epam\demo\task09\dnapp\OpenMeteoSDK\bin\Release\net6.0\OpenMeteoSDK.pdb
+C:\Users\giorgi\Desktop\Projects\Epam\demo\task09\dnapp\OpenMeteoSDK\obj\Release\net6.0\OpenMeteoSDK.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\giorgi\Desktop\Projects\Epam\demo\task09\dnapp\OpenMeteoSDK\obj\Release\net6.0\OpenMeteoSDK.AssemblyInfoInputs.cache
+C:\Users\giorgi\Desktop\Projects\Epam\demo\task09\dnapp\OpenMeteoSDK\obj\Release\net6.0\OpenMeteoSDK.AssemblyInfo.cs
+C:\Users\giorgi\Desktop\Projects\Epam\demo\task09\dnapp\OpenMeteoSDK\obj\Release\net6.0\OpenMeteoSDK.csproj.CoreCompileInputs.cache
+C:\Users\giorgi\Desktop\Projects\Epam\demo\task09\dnapp\OpenMeteoSDK\obj\Release\net6.0\OpenMeteoSDK.sourcelink.json
+C:\Users\giorgi\Desktop\Projects\Epam\demo\task09\dnapp\OpenMeteoSDK\obj\Release\net6.0\OpenMeteoSDK.dll
+C:\Users\giorgi\Desktop\Projects\Epam\demo\task09\dnapp\OpenMeteoSDK\obj\Release\net6.0\refint\OpenMeteoSDK.dll
+C:\Users\giorgi\Desktop\Projects\Epam\demo\task09\dnapp\OpenMeteoSDK\obj\Release\net6.0\OpenMeteoSDK.pdb
+C:\Users\giorgi\Desktop\Projects\Epam\demo\task09\dnapp\OpenMeteoSDK\obj\Release\net6.0\OpenMeteoSDK.genruntimeconfig.cache
+C:\Users\giorgi\Desktop\Projects\Epam\demo\task09\dnapp\OpenMeteoSDK\obj\Release\net6.0\ref\OpenMeteoSDK.dll

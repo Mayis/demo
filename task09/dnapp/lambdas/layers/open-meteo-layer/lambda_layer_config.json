@@ -1,0 +1,9 @@
+{
+  "name": "open-meteo-layer",
+  "resource_type": "lambda_layer",
+  "runtimes": [
+    "dotnet8"
+  ],
+  "deployment_package": "open-meteo-layer_layer.zip",
+  "custom_packages": []
+}
