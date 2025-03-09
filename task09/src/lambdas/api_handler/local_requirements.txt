@@ -1,2 +1,0 @@
-commons
-lambdas/layers/sdk_layer
