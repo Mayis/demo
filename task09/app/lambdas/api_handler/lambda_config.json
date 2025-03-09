@@ -16,5 +16,6 @@
   "lambdas_alias_name": "learn",
   "url_config": {},
   "ephemeral_storage": 512,
-  "tags": {}
+  "tags": {},
+  "layers": ["layers/sdk_layer"]
 }

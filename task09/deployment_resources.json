@@ -23,6 +23,7 @@
       "Version": "2012-10-17"
     },
     "resource_type": "iam_policy",
-    "tags": {}
+    "tags": {},
+    "layers": ["layers/sdk_layer"]
   }
 }
